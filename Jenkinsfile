@@ -1,24 +1,21 @@
-		
-   PIPELINES {
-    AGENT ANY
-	STAGES {
+pipeline {
+    agent any
 
-	   STAGE("BUILD") {
-		 STEPS {
-			ECHO 'BUILDING THE APPLICATION'
-			}		
-			}
-   	   STAGE("TEST") {
-		 STEPS {
-			ECHO 'TESTING THE APPLICATION'
-			}		
-			}
-
-	STAGE("TEST") {
-		 STEPS {
-			ECHO 'TESTING THE APPLICATION'
-			}		
-			}
-
-         }
+    stages {
+        stage('dev') {
+            steps {
+                echo 'developing'
+            }
+        }
+        stage('test') {
+            steps {
+                echo 'testing'
+            }
+        }
+        stage('prod') {
+            steps {
+                echo 'prod'
+            }
+        }
+        }
 }
