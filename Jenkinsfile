@@ -1,9 +1,24 @@
-node{
-stage('scm checkot'){
-git 'https://github.com/harishashi-143/hello-java'
-}
-stage('compile-prject'){
-def mvnloc = tool name: 'maven3', type: 'maven'
-sh "${mvnloc}/bin/mvn compile"
-}
+		
+   PIPELINES {
+    AGENT ANY
+	STAGES {
+
+	   STAGE("BUILD") {
+		 STEPS {
+			ECHO 'BUILDING THE APPLICATION'
+			}		
+			}
+   	   STAGE("TEST") {
+		 STEPS {
+			ECHO 'TESTING THE APPLICATION'
+			}		
+			}
+
+	STAGE("TEST") {
+		 STEPS {
+			ECHO 'TESTING THE APPLICATION'
+			}		
+			}
+
+         }
 }
